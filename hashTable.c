@@ -19,7 +19,7 @@ int main()
 	HashTable h;	
 	InitHashTable(&h);
 	int key,i;
-	for(i=0;i<m;i++)
+	for(i=0;i<=m;i++)
 	{
 		scanf("%d",&key);
 		InsertHash(&h,key);
@@ -46,7 +46,14 @@ void InsertHash(HashTable* h,int key)	//	插入操作
 {
 	int addr = Hash(key);	//求哈希地址
 	while(h->elem[addr]!=NULLKEY)
+	{
 		addr=(addr+1)%m;
+		if(addr==Hash(key))	//哈希表已满
+		{
+			fprintf(stderr,"ERROR:the hash table is full,can not insert again!\n");
+			return ;
+		}
+	}
 	h->elem[addr] = key;
 
 }
