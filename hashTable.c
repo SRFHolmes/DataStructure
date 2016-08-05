@@ -24,8 +24,6 @@ int main()
 		scanf("%d",&key);
 		InsertHash(&h,key);
 	}
-	
-	
 	return 0;
 }
 int InitHashTable(HashTable *h)		//初始化哈希表
