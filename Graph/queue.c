@@ -8,8 +8,13 @@ MyType pop(queue* a)
 }
 void push(queue* a,MyType b)
 {
-	a->node[a->e]=b;
-	a->e++;
+	if(a->e==MAX)
+		fprintf(stderr,"ERROR:the queue is full,can not push again!\n");
+	else
+	{
+		a->node[a->e]=b;
+		a->e++;
+	}
 }
 void initQueue(queue* a)
 {
