@@ -6,13 +6,10 @@ void CreatGraph(GraphAdjList *g)
 	EdgeNode *e;
 	scanf("%d%d",&g->numVertexes,&g->numEdges);
 	char c;
-	//gettchar();
 	for(i=0;i<g->numVertexes;i++)
 	{
 		while((c=getchar())=='\n'||c==' ');
 		g->adjList[i].data = c;
-		//	scanf("%c",&g->adjList[i].data);
-				
 		g->adjList[i].firstedge = NULL;
 	}
 	for(k=0;k<g->numEdges;k++)
@@ -22,7 +19,7 @@ void CreatGraph(GraphAdjList *g)
 		e->adjvex = j;
 		e->next = g->adjList[i].firstedge;
 		g->adjList[i].firstedge= e;
-                /*e=(EdgeNode*)malloc(sizeof(EdgeNode));
+                /*e=(EdgeNode*)malloc(sizeof(EdgeNode));//对于无向图，添加这段代码
                 e->adjvex = i;
                 e->next = g->adjList[j].firstedge;
                 g->adjList[j].firstedge= e;*/
