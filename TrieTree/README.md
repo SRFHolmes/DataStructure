@@ -29,6 +29,7 @@ class node:
 a am am inn in i to tea ted ten 
 ```
 那么我们可以构建出入下图所示的字典树
+![字典树](https://github.com/zkangHUST/DataStructure/blob/master/TrieTree/docs/TrieTree.png)
 
 显然，各个单词出现的频次如下:
 ```
@@ -36,7 +37,8 @@ a am am inn in i to tea ted ten
 ```
 好了，现在看看代码是如何实现的
 ```python
-# 定义节点，value表示当前字符，child表示下一个节点，下一个节点有a-z 26种可能性，因此建立一个26个元素的列表，freq表示出现的频次
+# 定义节点，value表示当前字符，child表示下一个节点，下一个节点有a-z 26种可能性，
+# 因此建立一个26个元素的列表，freq表示出现的频次
 class node:
     def __init__(self):
         self.value = 0
@@ -118,6 +120,8 @@ if __name__ == '__main__':
         print("%s:%d"%(v,cnt))
 ```
 执行结果如图
+
+![](https://github.com/zkangHUST/DataStructure/blob/master/TrieTree/docs/result.png)
 
 可见程序运行正确，拿其他的数据测试，一样可以得到正确的结果
 
